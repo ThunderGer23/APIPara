@@ -1,6 +1,8 @@
 import tensorflow_hub as hub
 import tensorflow_text as text
 from tensorflow import keras
+from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer
 
 def Interprete (data_base, data_com ):
   frases=[]
@@ -30,15 +32,16 @@ def Interprete (data_base, data_com ):
     if q >= 0.9:
       print(frases[count])
 
-sentences = [
-    "El perro juega en el parque .",
-    "Mi pastel se quemó",
-    "El niño no hizo el examen ",
-    "En el parque hay un perro jugando"
-]
+def main ():
+  sentences = [
+      "El perro juega en el parque .",
+      "Mi pastel se quemó",
+      "El niño no hizo el examen ",
+      "En el parque hay un perro jugando"
+  ]
 
-a = sentences[0]
-b = sentences[1:]
-
-sentence_embeddings = keras.model.encode(sentences)
-Interprete(a,b)
+  a = sentences[0]
+  b = sentences[1:]
+  model = SentenceTransformer('bert-base-nli-mean-tokens')
+  sentence_embeddings = keras.model.encode(sentences)
+  Interprete(a,b)
