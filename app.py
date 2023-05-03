@@ -4,7 +4,7 @@ from docs.docs import tags_metadata
 from os import environ as env
 from notigram import ping
 
-ping(env['TOKEN'], 'Aquí APICita Sstemas encendidos!')
+ping(env['TOKEN'], 'Aquí APIPara Sstemas encendidos!')
 app = FastAPI(
     title= "Someone title :v/ vrgs",
     description= "Someone description :v/ prrna",
