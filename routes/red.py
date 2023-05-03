@@ -6,6 +6,7 @@ from os import environ as env
 from notigram import ping
 from tensorflow import keras
 
+TOKEN='daa39d53-6283-47a1-b945-b7ee6528dde0'
 red = APIRouter()
 
 sentences = [
@@ -17,11 +18,11 @@ sentences = [
 
 @red.post('/test', response_model= str, tags=["Cod"])
 def postText(red: Red):
-    ping(env['TOKEN'], 'Iniciando análisis de Texto')
+    ping(TOKEN, 'Iniciando análisis de Texto')
     mod = model.encode(sentences)
     a = red.parrafo.texto1
     b = red.parrafo.texto2[:]
-    ping(env['TOKEN'], 'Análisis de Texto lista')
+    ping(TOKEN, 'Análisis de Texto lista')
     return Interprete(a,b)
 
 """
