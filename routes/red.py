@@ -3,7 +3,7 @@ from helpers.model import model
 from helpers.inter import Interprete
 from models.red import Red
 from os import environ as env
-#from notigram import ping
+from notigram import ping
 from tensorflow import keras
 
 red = APIRouter()
@@ -17,11 +17,11 @@ sentences = [
 
 @red.post('/test', response_model= str, tags=["Cod"])
 def postText(red: Red):
-    #ping('daa39d53-6283-47a1-b945-b7ee6528dde0', 'Iniciando analisis de código')
+    ping(env['TOKEN'], 'Iniciando análisis de Texto')
     mod = model.encode(sentences)
     a = red.parrafo.texto1
     b = red.parrafo.texto2[:]
-    #ping('daa39d53-6283-47a1-b945-b7ee6528dde0', 'Interpretación lista')
+    ping(env['TOKEN'], 'Análisis de Texto lista')
     return Interprete(a,b)
 
 """
