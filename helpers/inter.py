@@ -20,7 +20,7 @@ def Interprete (data_base, data_com ):
   print("\n\n oracion con mas equivalencia semantica (parafraseo): \n")
   #print(len(a))
   #print(type(a))
-  #print(a)
+  print(a)
   r_f = a[0]
   #print(r_f)
   #print(r_f)
