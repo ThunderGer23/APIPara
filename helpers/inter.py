@@ -11,11 +11,5 @@ def Interprete (data_base, data_com ):
   a=cosine_similarity(
     [frases_embeddings[0]],
     frases_embeddings[1:]
-    )
-  r_f = a[0]
-  count=0
-  for item in r_f:
-    count = count+1
-    if item >= 0.7:
-      return frases[count]
-  return ["Sin equivalencias semanticas"]
+    )  
+  return str(max(a[0])) if (max(a[0]) >= 0.7) else "Sin equivalencia"
