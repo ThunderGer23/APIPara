@@ -12,11 +12,9 @@ def Interprete (data_base, data_com ):
     [frases_embeddings[0]],
     frases_embeddings[1:]
     )
-  r_f = list(a[0].sort())
-  print(r_f)
-  count = 0
+  r_f = a[0]
+  res = []
   for item in r_f:
-    count = count+1
-    if item >= 0.9:
-      return frases[count]
-  return ["Sin equivalencias semanticas"]
+    if item >= 0.7:
+      res.append(item)
+  return res if(len(res) > 0) else ["Sin equivalencias semanticas"]
