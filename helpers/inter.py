@@ -12,4 +12,5 @@ def Interprete (data_base, data_com ):
     [frases_embeddings[0]],
     frases_embeddings[1:]
     )  
-  return str(max(a[0])) if (max(a[0]) >= 0.7) else "Sin equivalencia"
+  return frases[a[0].index(max(a[0]))] if max(a[0]) >= 0.7 else "Sin equivalencia"
+  
