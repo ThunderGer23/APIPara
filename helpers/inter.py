@@ -12,7 +12,7 @@ def Interprete (data_base, data_com ):
     [frases_embeddings[0]],
     frases_embeddings[1:]
     )
-  r_f = a[0].sort()
+  r_f = list(a[0].sort())
   print(r_f)
   count = 0
   for item in r_f:
