@@ -13,8 +13,9 @@ def Interprete (data_base, data_com ):
     frases_embeddings[1:]
     )
   r_f = a[0]
-  res = []
+  count=0
   for item in r_f:
+    count = count+1
     if item >= 0.7:
-      res.append(item)
-  return res if(len(res) > 0) else ["Sin equivalencias semanticas"]
+      return frases[count]
+  return ["Sin equivalencias semanticas"]

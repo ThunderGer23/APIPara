@@ -2,7 +2,9 @@ from fastapi import APIRouter
 from helpers.model import model
 from helpers.inter import Interprete
 from models.red import Red
+from typing import List
 from notigram import ping
+from tensorflow import keras
 
 TOKEN='daa39d53-6283-47a1-b945-b7ee6528dde0'
 red = APIRouter()
@@ -14,7 +16,7 @@ sentences = [
       "En el parque hay un perro jugando"
   ]
 
-@red.post('/test', tags=["Cod"])
+@red.post('/test', response_model= str, tags=["Cod"])
 def postText(red: Red):
     ping(TOKEN, 'Iniciando análisis de Texto')
     mod = model.encode(sentences)
