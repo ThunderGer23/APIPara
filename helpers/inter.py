@@ -7,7 +7,6 @@ def Interprete (data_base, data_com ):
   frases.append(data_base)
   for item in data_com :
     frases.append(item)
-  print("frases a compar
   frases_embeddings = model.encode(frases)
   a=cosine_similarity(
     [frases_embeddings[0]],
