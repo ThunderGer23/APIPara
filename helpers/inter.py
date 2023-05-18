@@ -1,6 +1,7 @@
 from tensorflow import keras
 from sklearn.metrics.pairwise import cosine_similarity
 from helpers.model import model
+from numpy import argmax
 
 def Interprete (data_base, data_com ):
   frases=[]
@@ -12,5 +13,5 @@ def Interprete (data_base, data_com ):
     [frases_embeddings[0]],
     frases_embeddings[1:]
     )  
-  return frases[a[0].index(max(a[0]))] if max(a[0]) >= 0.7 else "Sin equivalencia"
+  return f"El valor máximo es {max(a[0])} en la posición {argmax(a)}" if max_value >= 0.7 else "Sin equivalencia"
   
