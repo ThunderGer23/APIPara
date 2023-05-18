@@ -13,6 +13,5 @@ def Interprete (data_base, data_com ):
     [frases_embeddings[0]],
     frases_embeddings[1:]
     )  
-
-  return f"El valor máximo es {max(a[0])} en la posición {argmax(a)}" if max(a[0]) >= 0.7 else "Sin equivalencia"
+  return f"{frases[argmax(a)+1]}" if max(a[0]) >= 0.9 else "Sin equivalencia"
   
